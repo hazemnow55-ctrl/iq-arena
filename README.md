@@ -22,6 +22,8 @@ pnpm build
 
 المشروع مجهز بملف GitHub Actions في `.github/workflows/pages.yml`. بعد إنشاء مستودع GitHub ورفع المشروع إلى الفرع `main`، فعّل **Settings → Pages → Source: GitHub Actions** مرة واحدة. كل push لاحق سيشغل فحص TypeScript، يبني النسخة الساكنة، ثم ينشر محتوى `dist/public` تلقائيًا.
 
+أثناء البناء تُدمج ملفات CSS وJavaScript داخل `dist/public/index.html`، لذلك تكون حزمة النشر العامة لعبة HTML واحدة مستقلة، مع إبقاء ملفات المصدر منظمة وقابلة للتطوير داخل `client/`.
+
 استخدمت إعداد `base: "./"` في Vite حتى تعمل الأصول على المسار الفرعي المعتاد لمستودعات GitHub Pages، مثل `https://username.github.io/iq-arena/`.
 
 ## معاينة الحالات
